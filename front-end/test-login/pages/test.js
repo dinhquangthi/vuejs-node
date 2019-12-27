@@ -28,12 +28,11 @@ export default {
       // console.log(this.user.password);
     },
     submit() {
-      axios.post('http://localhost:5000/users/login', { body:"hihihiihi"
+      axios.request('http://localhost:5000/users/login', {
     })
     .then(response => {
       console.log('call thanh cong');
-      console.log(user.email);
-      console.log(user.password);
+      console.log(response);
     })
     .catch(e => {
       console.log('call that bai',e);

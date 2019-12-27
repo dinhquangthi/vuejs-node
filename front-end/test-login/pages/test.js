@@ -1,3 +1,4 @@
+import axios from 'axios'
 export default {
   name: "test",
   data () {
@@ -17,16 +18,26 @@ export default {
   computed: {
   },
   methods: {
+    // de ta
     getEmail() {
       this.user.email = event.target.value;
-      console.log(this.user.email);
+      // console.log(this.user.email);
     },
     getPass(){
       this.user.password = event.target.value;
-      console.log(this.user.password);
+      // console.log(this.user.password);
     },
     submit() {
-      console.log('aaaa');
+      axios.post('http://localhost:5000/users/login', { body:"hihihiihi"
+    })
+    .then(response => {
+      console.log('call thanh cong');
+      console.log(user.email);
+      console.log(user.password);
+    })
+    .catch(e => {
+      console.log('call that bai',e);
+    })
     }
   }
 };
